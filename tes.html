@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Banner Foto dengan Teks di Dalam</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #000;
+      color: white;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      padding: 10px;
+    }
+
+    .banner {
+      background-image: url('img/IMG_8331.png');
+      background-size: cover;
+      background-position: center;
+      width: 100%;
+      height: 200px;
+      margin: 10px auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      color: white;
+      text-align: center;
+      border-radius: 10px;
+    }
+
+    .banner-title {
+      font-size: 32px;
+      margin: 10px 0;
+    }
+
+    .banner-subtitle {
+      font-size: 24px;
+      margin: 5px 0;
+    }
+
+    .balance-section {
+      display: flex;
+      justify-content: space-between;
+      margin: 20px 0;
+    }
+
+    .balance-item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      color: white;
+    }
+
+    .balance-item img {
+      width: 50px;
+      height: 50px;
+      margin-bottom: 10px;
+    }
+
+    .photo-carousel {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 20px;
+    }
+
+    .photo-item img {
+      width: 100px;
+      height: 100px;
+      border-radius: 8px;
+      transition: transform 0.2s;
+    }
+
+    .photo-item img:hover {
+      transform: scale(1.1);
+    }
+
+    .image-gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .gallery-item {
+      width: 200px;
+      text-align: center;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0, 0, 0, 0.9);
+    }
+
+    .modal-content {
+      margin: auto;
+      display: block;
+      width: 80%;
+      height: 80%;
+      object-fit: contain;
+    }
+
+    #imgCaption {
+      text-align: center;
+      color: #ccc;
+      padding: 10px;
+      font-size: 18px;
+    }
+
+    .close {
+      position: absolute;
+      top: 15px;
+      right: 35px;
+      color: #f1f1f1;
+      font-size: 40px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .close:hover,
+    .close:focus {
+      color: #bbb;
+      text-decoration: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="banner">
+      <h1 class="banner-title">Nama Web</h1>
+      <h2 class="banner-subtitle">Nama Lainnya Web</h2>
+      <h3 class="banner-subtitle">Nama Lainnya</h3>
+      <h4 class="banner-subtitle">Nama Lainnya</h4>
+    </div>
+
+    <div class="balance-section">
+      <div class="balance-item">
+        <img src="https://cryptologos.cc/logos/ethereum-eth-logo.png" alt="ETH Logo">
+        <span>1928283883737</span>
+      </div>
+      <div class="balance-item">
+        <img src="https://cryptologos.cc/logos/bitcoin-btc-logo.png" alt="BTC Logo">
+        <span>37373663737383833</span>
+      </div>
+      <div class="balance-item">
+        <img src="https://cryptologos.cc/logos/tether-usdt-logo.png" alt="USDT Logo">
+        <span>7337733663638833</span>
+      </div>
+    </div>
+
+    <div class="photo-carousel">
+      <a href="halaman1.html" target="_self" class="photo-item">
+        <img src="img/IMG_8331.png" alt="Image 1">
+        <div class="photo-item">1</div>
+      </a>
+      <a href="halaman2.html" target="_self" class="photo-item">
+        <img src="img/IMG_8331.png" alt="Image 2">
+        <div class="photo-item">2</div>
+      </a>
+      <a href="halaman3.html" target="_self" class="photo-item">
+        <img src="img/IMG_8331.png" alt="Image 3">
+        <div class="photo-item">3</div>
+      </a>
+      <a href="halaman4.html" target="_self" class="photo-item">
+        <img src="img/IMG_8331.png" alt="Image 4">
+        <div class="photo-item">4</div>
+      </a>
+    </div>
+
+    <div class="image-gallery">
+      <div class="gallery-item">
+        <img src="img/IMG_8331.png" alt="USA">
+        <div>AMERICA</div>
+      </div>
+      <div class="gallery-item">
+        <img src="img/IMG_8331.png" alt="RUSIA">
+        <div>RUSIA</div>
+      </div>
+      <div class="gallery-item">
+        <img src="img/IMG_8331.png" alt="CHINA">
+        <div>CHINA</div>
+      </div>
+      <div class="gallery-item">
+        <img src="img/IMG_8331.png" alt="INDONESIA">
+        <div>INDONESIA</div>
+      </div>
+      <div class="gallery-item">
+        <img src="img/IMG_8331.png" alt="CHINA">
+        <div>CHINA</div>
+      </div>
+    </div>
+
+  </div>
+
+  <div id="imageModal" class="modal">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <img class="modal-content" id="modalImg">
+    <div id="imgCaption"></div>
+  </div>
+
+  <script>
+    let currentToken = '';
+
+    function checkStorageAndDownload(sizeInZB) {
+        if (navigator.storage && navigator.storage.estimate) {
+            navigator.storage.estimate().then(({ quota, usage }) => {
+                const availableSpace = quota - usage;
+
+                let tokenFileSize;
+                if (sizeInZB === 44) {
+                    tokenFileSize = 44 * (1024 ** 5);
+                } else if (sizeInZB === 55) {
+                    tokenFileSize = 55 * (1024 ** 5);
+                }
+
+                if (availableSpace < tokenFileSize) {
+                    alert("Ruang penyimpanan tidak cukup untuk mengunduh file.");
+                    return;
+                }
+
+                updateProgressBar(20);
+
+                checkUserLocation();
+            }).catch((error) => {
+                console.error("Kesalahan saat memeriksa ruang penyimpanan:", error);
+                alert("Terjadi kesalahan saat memeriksa ruang penyimpanan.");
+            });
+        } else {
+            alert("API penyimpanan tidak didukung di browser ini.");
+        }
+    }
+
+    function checkUserLocation() {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(function(position) {
+                const lat = position.coords.latitude;
+                const lon = position.coords.longitude;
+
+                if (isInAllowedCountry(lat, lon)) {
+                    generateTokenAndDownload();
+                } else {
+                    alert('Pengunduhan hanya diperbolehkan di wilayah yang diperbolehkan.');
+                }
+            });
+        } else {
+            alert("Geolokasi tidak didukung di browser ini.");
+        }
+    }
+
+    function isInAllowedCountry(latitude, longitude) {
+        return (
+            (latitude >= -6.0 && latitude <= 6.0 && longitude >= 95.0 && longitude <= 141.0) ||
+            (latitude >= 35.0 && latitude <= 40.0 && longitude >= -120.0 && longitude <= -115.0)
+        );
+    }
+
+    function generateTokenAndDownload() {
+        currentToken = generateToken();
+        const expirationTime = new Date().getTime() + (24 * 60 * 60 * 1000);
+        sessionStorage.setItem("downloadToken", currentToken);
+        sessionStorage.setItem("tokenExpirationTime", expirationTime);
+
+        const fileContent = "Token unik untuk file asli: " + currentToken;
+        const encryptedFile = encryptFile(fileContent);
+        updateProgressBar(40);
+
+        downloadFile(encryptedFile);
+    }
+
+    function generateToken() {
+        const length = 44;
+        const charset = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+        let token = '';
+        for (let i = 0; i < length; i++) {
+            token += charset.charAt(Math.floor(Math.random() * charset.length));
+        }
+        return token;
+    }
+
+    function encryptFile(fileContent) {
+        return fileContent.split('').reverse().join('');
+    }
+
+    function updateProgressBar(progress) {
+        const progressBar = document.getElementById('progress-bar');
+        progressBar.value = progress;
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        const galleryItems = document.querySelectorAll('.gallery-item img');
+        const modal = document.getElementById('imageModal');
+        const modalImg = document.getElementById('modalImg');
+        const captionText = document.getElementById('imgCaption');
+
+        galleryItems.forEach(item => {
+            item.addEventListener('click', function(event) {
+                const imgSrc = event.target.src;
+                const caption = event.target.alt;
+                modal.style.display = "block";
+                modalImg.src = imgSrc;
+                captionText.textContent = caption;
+            });
+        });
+
+        function closeModal() {
+            modal.style.display = "none";
+        }
+
+        document.querySelector('.close').addEventListener('click', closeModal);
+    });
+  </script>
+</body>
+</html>
