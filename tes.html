@@ -47,102 +47,181 @@
       margin: 5px 0;
     }
 
-    .balance-section {
-      display: flex;
-      justify-content: space-between;
-      margin: 20px 0;
+    @media (max-width: 480px) {
+      .banner {
+        height: 100px;
+      }
+      .banner-title { font-size: 18px; }
+      .banner-subtitle { font-size: 14px; }
     }
 
-    .balance-item {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      color: white;
+    @media (min-width: 481px) and (max-width: 768px) {
+      .banner {
+        height: 150px;
+      }
+      .banner-title { font-size: 22px; }
+      .banner-subtitle { font-size: 18px; }
     }
 
-    .balance-item img {
-      width: 50px;
-      height: 50px;
-      margin-bottom: 10px;
+    @media (min-width: 769px) and (max-width: 1024px) {
+      .banner {
+        height: 200px;
+      }
+      .banner-title { font-size: 26px; }
+      .banner-subtitle { font-size: 20px; }
+    }
+
+    @media (min-width: 1025px) {
+      .banner {
+        height: 300px;
+      }
+      .banner-title { font-size: 32px; }
+      .banner-subtitle { font-size: 24px; }
     }
 
     .photo-carousel {
       display: flex;
-      justify-content: space-between;
-      margin-bottom: 20px;
+      overflow-x: scroll;
+      gap: 10px;
+      background-color: #333;
+      border-radius: 10px;
+      padding: 10px 0;
+    }
+
+    .photo-item {
+      text-align: center;
+      color: white;
     }
 
     .photo-item img {
-      width: 100px;
-      height: 100px;
-      border-radius: 8px;
-      transition: transform 0.2s;
+      object-fit: cover;
+      border-radius: 50%;
+      background-color: #666;
     }
 
-    .photo-item img:hover {
-      transform: scale(1.1);
+    .photo-item img {
+      width: 30px;
+      height: 30px;
+    }
+
+    @media (min-width: 481px) and (max-width: 768px) {
+      .photo-item img {
+        width: 50px;
+        height: 50px;
+      }
+    }
+
+    @media (min-width: 769px) and (max-width: 1024px) {
+      .photo-item img {
+        width: 70px;
+        height: 70px;
+      }
+    }
+
+    @media (min-width: 1025px) {
+      .photo-item img {
+        width: 100px;
+        height: 100px;
+      }
+    }
+
+    .photo-carousel a {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-decoration: none;
+    }
+
+    .photo-item div {
+      font-size: 14px;
+      margin-top: 5px;
     }
 
     .image-gallery {
       display: flex;
-      flex-wrap: wrap;
+      overflow-x: auto;
       gap: 10px;
+      margin-top: 20px;
+      padding: 10px 0;
     }
 
     .gallery-item {
-      width: 200px;
-      text-align: center;
+      flex: 0 0 auto;
+      width: 150px;
+      height: 150px;
+      border-radius: 10px;
+      background-color: #333;
+      overflow: hidden;
+      position: relative;
     }
 
     .gallery-item img {
       width: 100%;
-      height: auto;
-      border-radius: 8px;
-    }
-
-    .modal {
-      display: none;
-      position: fixed;
-      z-index: 1;
-      left: 0;
-      top: 0;
-      width: 100%;
       height: 100%;
-      overflow: auto;
-      background-color: rgba(0, 0, 0, 0.9);
+      object-fit: cover;
+      border-radius: 10px;
     }
 
-    .modal-content {
-      margin: auto;
-      display: block;
-      width: 80%;
-      height: 80%;
-      object-fit: contain;
-    }
-
-    #imgCaption {
-      text-align: center;
-      color: #ccc;
-      padding: 10px;
-      font-size: 18px;
-    }
-
-    .close {
+    .gallery-item div {
       position: absolute;
-      top: 15px;
-      right: 35px;
-      color: #f1f1f1;
-      font-size: 40px;
-      font-weight: bold;
-      transition: 0.3s;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-color: rgba(0, 0, 0, 0.5);
+      color: white;
+      text-align: center;
+      padding: 5px;
+      font-size: 14px;
+      border-bottom-left-radius: 10px;
+      border-bottom-right-radius: 10px;
     }
 
-    .close:hover,
-    .close:focus {
-      color: #bbb;
-      text-decoration: none;
-      cursor: pointer;
+    .balance-section {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .balance-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      color: white;
+      margin-bottom: 15px;
+    }
+
+    .balance-item img {
+      width: 20px;
+      height: 20px;
+      margin-bottom: 5px;
+    }
+
+    .balance-item span {
+      font-size: 14px;
+    }
+
+    @media (max-width: 768px) {
+      .balance-item img {
+        width: 20px;
+        height: 20px;
+      }
+
+      .balance-item span {
+        font-size: 12px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .balance-item img {
+        width: 15px;
+        height: 15px;
+      }
+
+      .balance-item span {
+        font-size: 10px;
+      }
     }
   </style>
 </head>
@@ -211,124 +290,136 @@
         <div>CHINA</div>
       </div>
     </div>
-
-  </div>
-
-  <div id="imageModal" class="modal">
-    <span class="close" onclick="closeModal()">&times;</span>
-    <img class="modal-content" id="modalImg">
-    <div id="imgCaption"></div>
   </div>
 
   <script>
     let currentToken = '';
 
+    // Mengecek ruang penyimpanan dan memulai proses pengunduhan
     function checkStorageAndDownload(sizeInZB) {
-        if (navigator.storage && navigator.storage.estimate) {
-            navigator.storage.estimate().then(({ quota, usage }) => {
-                const availableSpace = quota - usage;
+      if (navigator.storage && navigator.storage.estimate) {
+        navigator.storage.estimate().then(({ quota, usage }) => {
+          const availableSpace = quota - usage;
 
-                let tokenFileSize;
-                if (sizeInZB === 44) {
-                    tokenFileSize = 44 * (1024 ** 5);
-                } else if (sizeInZB === 55) {
-                    tokenFileSize = 55 * (1024 ** 5);
-                }
+          let tokenFileSize;
+          if (sizeInZB === 44) {
+            tokenFileSize = 44 * (1024 ** 5);
+          } else if (sizeInZB === 55) {
+            tokenFileSize = 55 * (1024 ** 5);
+          }
 
-                if (availableSpace < tokenFileSize) {
-                    alert("Ruang penyimpanan tidak cukup untuk mengunduh file.");
-                    return;
-                }
+          if (availableSpace < tokenFileSize) {
+            alert("Ruang penyimpanan tidak cukup untuk mengunduh file.");
+            return;
+          }
 
-                updateProgressBar(20);
+          updateProgressBar(20); // Progress bar mulai
 
-                checkUserLocation();
-            }).catch((error) => {
-                console.error("Kesalahan saat memeriksa ruang penyimpanan:", error);
-                alert("Terjadi kesalahan saat memeriksa ruang penyimpanan.");
-            });
-        } else {
-            alert("API penyimpanan tidak didukung di browser ini.");
-        }
-    }
-
-    function checkUserLocation() {
-        if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(function(position) {
-                const lat = position.coords.latitude;
-                const lon = position.coords.longitude;
-
-                if (isInAllowedCountry(lat, lon)) {
-                    generateTokenAndDownload();
-                } else {
-                    alert('Pengunduhan hanya diperbolehkan di wilayah yang diperbolehkan.');
-                }
-            });
-        } else {
-            alert("Geolokasi tidak didukung di browser ini.");
-        }
-    }
-
-    function isInAllowedCountry(latitude, longitude) {
-        return (
-            (latitude >= -6.0 && latitude <= 6.0 && longitude >= 95.0 && longitude <= 141.0) ||
-            (latitude >= 35.0 && latitude <= 40.0 && longitude >= -120.0 && longitude <= -115.0)
-        );
-    }
-
-    function generateTokenAndDownload() {
-        currentToken = generateToken();
-        const expirationTime = new Date().getTime() + (24 * 60 * 60 * 1000);
-        sessionStorage.setItem("downloadToken", currentToken);
-        sessionStorage.setItem("tokenExpirationTime", expirationTime);
-
-        const fileContent = "Token unik untuk file asli: " + currentToken;
-        const encryptedFile = encryptFile(fileContent);
-        updateProgressBar(40);
-
-        downloadFile(encryptedFile);
-    }
-
-    function generateToken() {
-        const length = 44;
-        const charset = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-        let token = '';
-        for (let i = 0; i < length; i++) {
-            token += charset.charAt(Math.floor(Math.random() * charset.length));
-        }
-        return token;
-    }
-
-    function encryptFile(fileContent) {
-        return fileContent.split('').reverse().join('');
-    }
-
-    function updateProgressBar(progress) {
-        const progressBar = document.getElementById('progress-bar');
-        progressBar.value = progress;
-    }
-
-    document.addEventListener('DOMContentLoaded', function() {
-        const galleryItems = document.querySelectorAll('.gallery-item img');
-        const modal = document.getElementById('imageModal');
-        const modalImg = document.getElementById('modalImg');
-        const captionText = document.getElementById('imgCaption');
-
-        galleryItems.forEach(item => {
-            item.addEventListener('click', function(event) {
-                const imgSrc = event.target.src;
-                const caption = event.target.alt;
-                modal.style.display = "block";
-                modalImg.src = imgSrc;
-                captionText.textContent = caption;
-            });
+          checkUserLocation(); // Periksa lokasi pengguna sebelum melanjutkan
+        }).catch((error) => {
+          console.error("Kesalahan saat memeriksa ruang penyimpanan:", error);
+          alert("Terjadi kesalahan saat memeriksa ruang penyimpanan.");
         });
+      } else {
+        alert("API penyimpanan tidak didukung di browser ini.");
+      }
+    }
 
-        function closeModal() {
-            modal.style.display = "none";
+    // Mengecek lokasi pengguna dan memastikan berada di wilayah yang diizinkan
+    function checkUserLocation() {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(function(position) {
+          const lat = position.coords.latitude;
+          const lon = position.coords.longitude;
+
+          // Memeriksa apakah lokasi pengguna berada di negara yang diperbolehkan
+          if (isInAllowedCountry(lat, lon)) {
+            generateTokenAndDownload();
+          } else {
+            alert('Pengunduhan hanya diperbolehkan di wilayah yang diperbolehkan.');
+          }
+        });
+      } else {
+        alert("Geolokasi tidak didukung di browser ini.");
+      }
+    }
+
+    // Memeriksa apakah lokasi berada di negara yang diizinkan
+    function isInAllowedCountry(latitude, longitude) {
+      return (
+        (latitude >= -6.0 && latitude <= 6.0 && longitude >= 95.0 && longitude <= 141.0) ||  // Indonesia
+        (latitude >= 35.0 && latitude <= 40.0 && longitude >= -120.0 && longitude <= -115.0)  // USA
+      );
+    }
+
+    // Membuat token dan memulai pengunduhan
+    function generateTokenAndDownload() {
+      currentToken = generateToken();
+      const expirationTime = new Date().getTime() + (24 * 60 * 60 * 1000);  // Token kadaluarsa dalam 24 jam
+      sessionStorage.setItem("downloadToken", currentToken);
+      sessionStorage.setItem("tokenExpirationTime", expirationTime);
+
+      const fileContent = "Token unik untuk file asli: " + currentToken;
+      const encryptedContent = encryptFile(fileContent);
+      const blob = new Blob([encryptedContent], { type: 'text/plain' });
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.href = url;
+      link.download = 'tokenFile.txt';
+      link.click();
+
+      updateProgressBar(100); // Progress bar selesai
+      alert("File token telah diunduh. Token baru: " + currentToken);
+    }
+
+    // Membuat token acak
+    function generateToken() {
+      const length = 22;
+      const charset = 'あいうえおかきくけこさしすせそたちつてとなにぬねのまみむめもやゆよらりるれろわをんАБВГҐДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЭЮЯабвгдеёжзийклмнопрстуфхцчшщэюя';
+      let token = '';
+      const array = new Uint32Array(length);
+      crypto.getRandomValues(array);
+      for (let i = 0; i < length; i++) {
+        token += charset.charAt(array[i] % charset.length);
+      }
+      return token;
+    }
+
+    // Mengenkripsi konten file
+    function encryptFile(content) {
+      let encryptedContent = content.split('').reverse().join('');
+      return encryptedContent;
+    }
+
+    // Memperbarui progress bar unduhan
+    function updateProgressBar(progress) {
+      const progressBar = document.getElementById('progress');
+      progressBar.style.width = progress + '%';
+    }
+
+    // Mengecek apakah token telah kadaluarsa
+    function checkTokenExpiration() {
+      const expirationTime = sessionStorage.getItem("tokenExpirationTime");
+      if (expirationTime) {
+        const currentTime = new Date().getTime();
+        if (currentTime > expirationTime) {
+          sessionStorage.removeItem("downloadToken");
+          sessionStorage.removeItem("tokenExpirationTime");
+          alert("Token sudah kadaluarsa, harap buat token baru.");
+        } else {
+          alert("Token masih berlaku.");
         }
+      }
+    }
 
-        document.querySelector('.close').addEventListener('click', closeModal);
+    // Fungsi inisialisasi event listener saat DOM siap
+    document.addEventListener("DOMContentLoaded", function() {
+      document.getElementById("downloadBtn44").addEventListener("click", function() {
+        checkStorageAndDownload(44);
+      });
+      document.getElementById("downloadBtn55").addEventListener("click", function() {
+        checkStorageAndDownload(55);
+      });
     });
   </script>
 </body>
